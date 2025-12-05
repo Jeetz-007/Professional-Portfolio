@@ -1,0 +1,211 @@
+/* Skills.css - Chip-based skills layout (uses your :root theme variables) */
+
+/* container */
+.skills-page {
+  background: var(--bg-primary);
+  color: var(--text-light);
+  padding: 3rem 1.5rem;
+}
+
+/* inner width */
+.skills-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* header */
+.skills-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.skills-title {
+  font-size: 2rem;
+  color: var(--accent-neon);
+  text-shadow: 0 0 10px var(--accent-neon);
+  margin: 0;
+}
+.skills-sub {
+  color: var(--text-muted);
+  margin-top: 0.6rem;
+  font-size: 0.98rem;
+}
+
+/* grid of categories */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+}
+
+/* each category card */
+.skill-card {
+  background: rgba(0, 255, 179, 0.02);
+  border: 1px solid var(--border-glow);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,255,179,0.03);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 120px;
+}
+
+/* category title */
+.skill-card-title {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  margin: 0;
+}
+
+/* chips wrapper */
+.skill-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 0.25rem;
+}
+
+/* chip (pill) */
+.skill-chip {
+  background: rgba(0,255,179,0.03);
+  color: var(--text-muted);
+  border: 1px solid rgba(0,255,179,0.10);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  cursor: default;
+  transition: transform 0.14s ease, box-shadow 0.14s ease, color 0.14s ease, background 0.14s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* hover/focus looks interactive but non-destructive */
+.skill-chip:hover,
+.skill-chip:focus {
+  color: var(--accent-neon);
+  background: rgba(0,255,179,0.06);
+  box-shadow: 0 0 8px rgba(0,255,179,0.08);
+  transform: translateY(-3px);
+  outline: none;
+}
+
+/* accessible focus */
+.skill-chip:focus {
+  box-shadow: 0 0 12px rgba(0,255,179,0.12);
+}
+
+/* smaller screens */
+@media (max-width: 720px) {
+  .skills-inner { padding: 0 0.5rem; }
+  .skill-card { min-height: auto; }
+  .skill-card-title { font-size: 1rem; }
+}
+
+
+/* --------------------------------------------------
+   RESPONSIVE MEDIA QUERIES FOR Skills.css
+   -------------------------------------------------- */
+
+/* --- Large desktops (≥1400px) --- */
+@media (min-width: 1400px) {
+  .skills-page {
+    padding: 4rem 2.5rem;
+  }
+  .skills-title {
+    font-size: 2.4rem;
+  }
+  .skills-grid {
+    gap: 1.6rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  }
+  .skill-card {
+    padding: 1.25rem;
+    min-height: 140px;
+  }
+  .skill-chip {
+    font-size: 0.95rem;
+    padding: 7px 12px;
+  }
+}
+
+/* --- Laptops / Medium screens (≤1100px) --- */
+@media (max-width: 1100px) {
+  .skills-title {
+    font-size: 1.9rem;
+  }
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.1rem;
+  }
+  .skill-card {
+    padding: 1rem;
+  }
+}
+
+/* --- Tablets (≤900px) --- */
+@media (max-width: 900px) {
+  .skills-page {
+    padding: 2.6rem 1.25rem;
+  }
+  .skills-title {
+    font-size: 1.8rem;
+  }
+  .skills-sub {
+    font-size: 0.95rem;
+  }
+  .skill-card-title {
+    font-size: 1rem;
+  }
+  .skill-chip {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+  }
+}
+
+/* --- Large Phones / Small Tablets (≤720px) --- */
+@media (max-width: 720px) {
+  .skills-inner {
+    padding: 0;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr 1fr; /* two columns */
+    gap: 1rem;
+  }
+  .skill-card {
+    padding: 0.85rem;
+    min-height: auto;
+  }
+}
+
+/* --- Phones (≤520px) --- */
+@media (max-width: 520px) {
+  .skills-page {
+    padding: 2rem 1rem;
+  }
+  .skills-title {
+    font-size: 1.7rem;
+  }
+  .skills-grid {
+    grid-template-columns: 1fr; /* single column */
+  }
+  .skill-card {
+    padding: 0.9rem;
+  }
+  .skill-chip {
+    font-size: 0.83rem;
+    padding: 6px 9px;
+  }
+}
+
+/* --- Very small phones (≤360px) --- */
+@media (max-width: 360px) {
+  .skills-title {
+    font-size: 1.5rem;
+  }
+  .skill-chip {
+    font-size: 0.8rem;
+    padding: 5px 8px;
+  }
+}

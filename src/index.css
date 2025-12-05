@@ -1,0 +1,22 @@
+:root {
+  --bg-primary: #0D0D0D;                /* main dark background */
+
+  --accent-neon: #00FFB3;               /* signature neon greenish-teal */
+  --accent-neon-soft: #00D699;          /* softer hover neon */
+
+  --text-light: #DDDDDD;                /* main text */
+  --text-muted: #CCCCCC;                /* secondary text */
+
+  --border-glow: rgba(0, 255, 179, 0.25); /* subtle glow border */
+}
+
+body{
+  font-family: 'Orbitron', sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+

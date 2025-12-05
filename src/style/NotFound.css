@@ -1,0 +1,169 @@
+/* NotFound.css - Neon-themed 404 page */
+
+.notfound-page {
+  background: var(--bg-primary);
+  color: var(--text-light);
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.notfound-inner {
+  text-align: center;
+  max-width: 600px;
+  padding: 2rem 1.5rem;
+  background: rgba(0, 255, 179, 0.02);
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0,255,179,0.05);
+}
+
+/* big 404 number */
+.nf-code {
+  font-size: 6rem;
+  color: var(--accent-neon);
+  text-shadow: 0 0 18px var(--accent-neon);
+  margin-bottom: 0.5rem;
+}
+
+.nf-title {
+  font-size: 1.7rem;
+  margin-bottom: 0.6rem;
+}
+
+.nf-text {
+  color: var(--text-muted);
+  margin-bottom: 1.8rem;
+  font-size: 1.05rem;
+}
+
+/* ACTION BUTTONS */
+.nf-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.btn-back, .btn-home {
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.2s ease;
+}
+
+/* Back button */
+.btn-back {
+  background: transparent;
+  border: 1px solid var(--accent-neon);
+  color: var(--accent-neon);
+}
+.btn-back:hover {
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  box-shadow: 0 0 20px rgba(0,255,179,0.2);
+  transform: translateY(-3px);
+}
+
+/* Home button */
+.btn-home {
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  border: 1px solid transparent;
+}
+.btn-home:hover {
+  background: var(--accent-neon-soft);
+  box-shadow: 0 0 22px rgba(0,255,179,0.2);
+  transform: translateY(-3px);
+}
+
+/* responsive */
+@media (max-width: 600px) {
+  .nf-code {
+    font-size: 4.2rem;
+  }
+  .nf-actions {
+    flex-direction: column;
+  }
+  .btn-back, .btn-home {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+/* ---------------- Responsive media queries for NotFound.css ---------------- */
+
+/* Extra-large / wide screens */
+@media (min-width: 1400px) {
+  .notfound-inner {
+    max-width: 760px;
+    padding: 3rem 2rem;
+  }
+  .nf-code { font-size: 8rem; }
+  .nf-title { font-size: 2.2rem; }
+  .nf-text { font-size: 1.15rem; }
+}
+
+/* Desktop / laptop refinement */
+@media (max-width: 1200px) {
+  .notfound-inner { padding: 2.4rem 1.6rem; }
+  .nf-code { font-size: 6.2rem; }
+  .nf-title { font-size: 1.9rem; }
+}
+
+/* Tablets / medium screens */
+@media (max-width: 900px) {
+  .notfound-inner {
+    padding: 2rem 1.2rem;
+  }
+  .nf-code { font-size: 5rem; }
+  .nf-title { font-size: 1.6rem; }
+  .nf-text { font-size: 1rem; }
+  .nf-actions { gap: 0.8rem; }
+}
+
+/* Phones */
+@media (max-width: 520px) {
+  .notfound-inner {
+    width: 100%;
+    padding: 1.6rem;
+    margin: 0 0.5rem;
+  }
+  .nf-code { font-size: 3.6rem; }
+  .nf-title { font-size: 1.35rem; }
+  .nf-text { font-size: 0.96rem; }
+  .nf-actions { flex-direction: column; gap: 10px; }
+  .btn-back, .btn-home { width: 100%; }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .notfound-inner { padding: 1.1rem; }
+  .nf-code { font-size: 3.1rem; }
+  .nf-title { font-size: 1.15rem; }
+  .nf-text { font-size: 0.9rem; }
+  .btn-back, .btn-home { padding: 9px 12px; font-size: 0.95rem; }
+}
+
+/* High-DPI / Retina: slightly sharpen glow */
+@media (min-resolution: 1.3dppx) {
+  .nf-code { text-shadow: 0 0 20px var(--accent-neon); }
+}
+
+/* Reduced-motion: remove lift animations */
+@media (prefers-reduced-motion: reduce) {
+  .btn-back, .btn-home {
+    transition: none !important;
+  }
+  .btn-back:hover, .btn-home:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

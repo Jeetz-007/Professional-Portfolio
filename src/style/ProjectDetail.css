@@ -1,0 +1,458 @@
+/* project-detail.css - uses global :root theme variables */
+
+.project-detail {
+  padding: 3rem 2rem;
+  background: var(--bg-primary);
+  color: var(--text-light);
+}
+
+/* header area */
+.detail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 1.6rem;
+  flex-wrap: wrap;
+}
+
+.back-inline {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--border-glow);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.back-inline:hover {
+  color: var(--accent-neon);
+  box-shadow: 0 0 8px var(--accent-neon);
+}
+
+.btn-primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1px solid rgba(0,255,179,0.18);
+  transition: 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0,255,179,0.12);
+}
+
+.btn-primary-link:hover {
+  background: var(--accent-neon-soft);
+  color: var(--bg-primary);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,255,179,0.18);
+}
+
+
+/* title/meta */
+.detail-title h1 {
+  margin: 0;
+  color: var(--accent-neon);
+  text-shadow: 0 0 12px var(--accent-neon);
+  font-size: 1.8rem;
+}
+.detail-title .meta {
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 0.95rem;
+}
+
+/* top right links */
+.detail-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.icon-btn {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border-glow);
+  color: var(--text-light);
+  text-decoration: none;
+}
+.icon-btn:hover {
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  box-shadow: 0 0 12px var(--accent-neon);
+}
+
+/* Grid: screenshots + content */
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 28px;
+  align-items: start;
+}
+
+/* screenshots column */
+.screenshots {
+  display: grid;
+  gap: 14px;
+}
+.screenshot {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 0 14px rgba(0, 255, 179, 0.08);
+}
+
+/* right content */
+.detail-content h3 {
+  color: var(--accent-neon);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+.short {
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+.description,
+.notes {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* tech list */
+.tech-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.tech-item {
+  background: rgba(0,255,179,0.03);
+  border: 1px solid var(--border-glow);
+  padding: 10px;
+  border-radius: 8px;
+}
+.tech-name {
+  color: var(--accent-neon);
+  font-weight: 600;
+  margin-right: 8px;
+}
+.tech-detail {
+  display: block;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+/* actions */
+.detail-actions {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+}
+.btn-secondary {
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  color: var(--text-muted);
+  border: 1px solid var(--border-glow);
+}
+.btn-primary {
+  text-decoration: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+}
+
+
+/* Visual column & gallery */
+.visual-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* hero */
+.project-hero {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid var(--border-glow);
+  box-shadow: 0 8px 30px rgba(0,255,179,0.03);
+}
+
+.project-hero.placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  background: rgba(0,0,0,0.12);
+  color: var(--text-muted);
+}
+
+.placeholder-box {
+  padding: 28px;
+  color: var(--text-muted);
+}
+
+/* main image */
+.main-image {
+  width: 100%;
+  height: 360px;
+  /* object-fit: cover; */
+  display: block;
+}
+
+/* thumbnails row */
+.thumbs {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.thumb {
+  border: none;
+  background: transparent;
+  padding: 3px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.14s ease, box-shadow 0.14s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.thumb img {
+  width: 88px;
+  height: 56px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.thumb.active {
+  box-shadow: 0 0 18px rgba(0,255,179,0.12);
+  transform: translateY(-4px);
+}
+
+/* responsive adjustments */
+@media (max-width: 980px) {
+  .main-image {
+    height: 240px;
+  }
+
+  .thumb img {
+    width: 72px;
+    height: 48px;
+  }
+}
+
+/* keep the rest of your project-detail styles intact */
+
+
+/* not found */
+.project-detail.not-found {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 980px) {
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-links {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+  }
+}
+
+
+/* ---------------------------------------------------------
+   RESPONSIVE MEDIA QUERIES FOR PROJECTDETAIL.CSS
+   --------------------------------------------------------- */
+
+/* --- Large / wide desktops (≥1400px) --- */
+@media (min-width: 1400px) {
+  .detail-grid {
+    grid-template-columns: 1fr 480px;
+    gap: 36px;
+  }
+
+  .main-image {
+    height: 420px;
+  }
+
+  .thumb img {
+    width: 100px;
+    height: 66px;
+  }
+
+  .detail-title h1 {
+    font-size: 2.1rem;
+  }
+}
+
+/* --- Regular desktops / laptops (≤1200px) --- */
+@media (max-width: 1200px) {
+  .detail-grid {
+    grid-template-columns: 1fr 380px;
+  }
+
+  .detail-title h1 {
+    font-size: 1.7rem;
+  }
+
+  .main-image {
+    height: 300px;
+  }
+}
+
+/* --- Tablets / medium screens (≤980px) --- */
+@media (max-width: 980px) {
+  .project-detail {
+    padding: 2.4rem 1.4rem;
+  }
+
+  .detail-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .detail-links {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* stack layout */
+  .detail-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .main-image {
+    height: 240px;
+  }
+}
+
+/* --- Small tablets & large phones (≤720px) --- */
+@media (max-width: 720px) {
+  .detail-title h1 {
+    font-size: 1.55rem;
+  }
+
+  .meta {
+    font-size: 0.9rem;
+  }
+
+  .main-image {
+    height: 220px;
+  }
+
+  .thumb img {
+    width: 70px;
+    height: 46px;
+  }
+
+  .tech-item {
+    padding: 8px;
+  }
+}
+
+/* --- Phones (≤520px) --- */
+@media (max-width: 520px) {
+  .project-detail {
+    padding: 1.6rem 1rem;
+  }
+
+  .detail-head {
+    gap: 10px;
+  }
+
+  .detail-title h1 {
+    font-size: 1.4rem;
+  }
+
+  .detail-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .main-image {
+    height: 200px;
+  }
+
+  .thumbs {
+    gap: 8px;
+  }
+
+  .thumb img {
+    width: 62px;
+    height: 40px;
+  }
+}
+
+/* --- Very small phones (≤360px) --- */
+@media (max-width: 360px) {
+  .detail-title h1 {
+    font-size: 1.25rem;
+  }
+
+  .main-image {
+    height: 170px;
+  }
+
+  .thumb img {
+    width: 56px;
+    height: 36px;
+  }
+
+  .btn-primary-link,
+  .back-inline {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+}
+
+/* --- High DPI screens (Retina) --- */
+@media (min-resolution: 1.3dppx) {
+  .detail-title h1 {
+    text-shadow: 0 0 16px var(--accent-neon);
+  }
+  .icon-btn:hover {
+    box-shadow: 0 0 14px var(--accent-neon);
+  }
+}
+
+/* --- Reduced motion accessibility --- */
+@media (prefers-reduced-motion: reduce) {
+  .btn-primary-link,
+  .icon-btn,
+  .back-inline,
+  .thumb {
+    transition: none !important;
+  }
+
+  .btn-primary-link:hover,
+  .icon-btn:hover,
+  .thumb:hover {
+    transform: none !important;
+    box-shadow: none !important;
+  }
+}

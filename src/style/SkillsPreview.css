@@ -1,0 +1,90 @@
+/* Skills preview chip row */
+.skills-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+/* individual skill chips */
+.skill-chip {
+  padding: 6px 14px;
+  background: rgba(0, 255, 179, 0.08);
+  border: 1px solid var(--border-glow);
+  color: var(--accent-neon);
+  border-radius: 8px;
+  font-size: 0.87rem;
+  letter-spacing: 0.3px;
+  font-weight: 500;
+  text-shadow: 0 0 6px rgba(0, 255, 179, 0.35);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+/* hover: soft pop + glow */
+.skill-chip:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 12px rgba(0, 255, 179, 0.28);
+  background: rgba(0, 255, 179, 0.16);
+}
+
+
+/* ------------------------ Responsive Tweaks ------------------------ */
+
+/* Medium screens — slightly reduce chip padding */
+@media (max-width: 900px) {
+  .skill-chip {
+    padding: 6px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Small phones */
+@media (max-width: 600px) {
+  .skills-preview {
+    gap: 8px;
+  }
+
+  .skill-chip {
+    padding: 5px 10px;
+    font-size: 0.83rem;
+    border-radius: 7px;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 400px) {
+  .skills-preview {
+    justify-content: center; /* centers chips nicely on tiny screens */
+    gap: 6px;
+  }
+
+  .skill-chip {
+    padding: 4px 9px;
+    font-size: 0.8rem;
+    letter-spacing: 0.2px;
+  }
+}
+
+/* Ultra-narrow screens (older Androids, devtools 320px) */
+@media (max-width: 330px) {
+  .skill-chip {
+    padding: 4px 8px;
+    font-size: 0.78rem;
+  }
+}
+
+/* High-DPI displays — sharper glow */
+@media (min-resolution: 1.3dppx) {
+  .skill-chip {
+    text-shadow: 0 0 7px rgba(0,255,179,0.45);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .skill-chip,
+  .skill-chip:hover {
+    transition: none !important;
+    transform: none !important;
+  }
+}

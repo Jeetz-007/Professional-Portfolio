@@ -1,0 +1,481 @@
+/* MAIN CONTAINER */
+.contact-container {
+  padding: 50px 20px;
+  background-color: var(--bg-primary);
+  color: var(--text-light);
+}
+
+/* PAGE HEADING */
+.contact-heading {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--accent-neon);
+  /* text-shadow: 0 0 12px var(--accent-neon); */
+  margin-bottom: 40px;
+}
+
+/* FLEX LAYOUT — CENTERED */
+.contact-flex {
+  display: flex;
+  justify-content: center;         /* centers horizontally */
+  align-items: flex-start;
+  gap: 60px;                       /* space between form & chat box */
+  max-width: 1100px;               /* keeps layout compact & centered */
+  width: 100%;
+  margin: 0 auto;                  /* centers container */
+  flex-wrap: nowrap;               /* side-by-side on big screens */
+}
+
+/* LEFT — CONTACT FORM */
+.contact-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  /* background-color: var(--bg-primary); */
+  /* border: 1px solid var(--border-glow); */
+  border-radius: 12px;
+  padding: 30px;
+  /* box-shadow: 0 0 12px rgba(0, 255, 179, 0.12); */
+}
+
+.contact-form label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: bold;
+}
+
+/* FORM INPUTS */
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid var(--accent-neon);
+  background: transparent;
+  color: var(--text-light);
+  outline: none;
+  transition: 0.25s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  box-shadow: 0 0 10px var(--accent-neon);
+}
+
+.contact-form textarea {
+  height: 140px;
+  resize: none;
+}
+
+/* UNIFORM PLACEHOLDER STYLE */
+::placeholder {
+  color: var(--text-muted);
+  opacity: 1; 
+  font-size: 0.85rem;
+  font-family: 'Orbitron', sans-serif;;
+}
+
+
+
+/* SUBMIT BUTTON */
+.btn-submit {
+    width: calc(100% + 2px);                 /* 👈 FULL WIDTH MATCHES INPUTS */
+    padding: 12px;                /* 👈 same padding as inputs */
+    background-color: var(--accent-neon);
+    color: var(--bg-primary);
+    border: none;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+
+.btn-submit:hover {
+  background-color: var(--accent-neon-soft);
+  box-shadow: 0 0 12px var(--accent-neon);
+}
+
+/* RIGHT — CHAT WITH ME BOX */
+.social-links {
+  width: 380px;
+}
+
+/* CHAT HEADING */
+.link-heading {
+  font-size: 1.6rem;
+  color: var(--accent-neon);
+  /* text-shadow: 0 0 12px var(--accent-neon); */
+  margin-bottom: 18px;
+}
+
+/* DESCRIPTION ABOVE ICONS */
+.contact-description {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+/* SOCIAL LINKS LIST */
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* SOCIAL LINK ITEM */
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 1.1rem;
+  transition: 0.25s ease;
+}
+
+/* ICON STYLE */
+.link-icon {
+  font-size: 1.5rem;
+  color: var(--accent-neon);
+  transition: 0.25s ease;
+}
+
+/* HOVER STYLE FOR LINKS */
+.contact-link:hover {
+  color: var(--accent-neon);
+  text-shadow: 0 0 10px var(--accent-neon);
+}
+
+.contact-link:hover .link-icon {
+  color: var(--accent-neon-soft);
+  text-shadow: 0 0 8px var(--accent-neon);
+}
+
+/* RESPONSIVE DESIGN */
+@media(max-width: 900px) {
+
+  .contact-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .contact-links {
+    align-items: center;
+  }
+
+  .social-links {
+    width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+
+/* === Form validation / submit state styles === */
+
+/* Inline field error */
+.field-error {
+  color: #ffb3b3;
+  background: rgba(255, 180, 180, 0.03);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-top: -6px;
+  margin-bottom: 6px;
+  font-size: 0.92rem;
+  border: 1px solid rgba(255, 100, 100, 0.06);
+}
+
+/* General submit / network error */
+.submit-error {
+  color: #ffb3b3;
+  background: rgba(255,180,180,0.02);
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  text-align: left;
+  font-size: 0.95rem;
+  border: 1px solid rgba(255,100,100,0.06);
+}
+
+/* Disabled submit button state */
+.btn-submit[disabled] {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* If you use an inline icon inside the button (PaperPlane), center nicely */
+.btn-submit svg {
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+/* === Success page specific styles === */
+/* Reuse your existing layout but style the success card */
+.contact-success {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: var(--bg-primary);
+  color: var(--text-light);
+}
+
+.success-card {
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+  background: rgba(0,255,179,0.02);
+  border: 1px solid var(--border-glow);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 36px rgba(0,255,179,0.02);
+}
+
+.success-title {
+  font-size: 1.6rem;
+  color: var(--accent-neon);
+  margin: 0 0 0.6rem 0;
+}
+
+.success-text {
+  color: var(--text-muted);
+  margin-bottom: 1.4rem;
+  line-height: 1.6;
+}
+
+/* Action buttons on success card */
+.success-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Back button - outline style */
+.btn-back {
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid var(--border-glow);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Primary link style (used both for success and other places) */
+.btn-primary-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid rgba(0,255,179,0.18);
+  transition: 0.18s ease;
+}
+
+.btn-primary-link:hover,
+.btn-back:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,255,179,0.12);
+}
+
+/* small-screen tweaks for success card */
+@media (max-width: 720px) {
+  .success-card { padding: 1.25rem; }
+  .success-title { font-size: 1.35rem; }
+  .success-actions { flex-direction: column; gap: 10px; }
+  .btn-primary-link, .btn-back { width: 100%; }
+}
+
+/* === Tiny utility for centering the form submit if needed === */
+.contact-form .submit-row {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 6px;
+}
+
+
+/* --------------------------------------------------
+   LARGE DESKTOPS / WIDE SCREENS
+-------------------------------------------------- */
+@media (min-width: 1400px) {
+  .contact-container {
+    padding: 70px 40px;
+  }
+
+  .contact-heading {
+    font-size: 2.6rem;
+  }
+
+  .contact-flex {
+    gap: 90px;
+    max-width: 1300px;
+  }
+
+  .contact-form,
+  .social-links {
+    transform: scale(1.05);
+  }
+}
+
+
+/* --------------------------------------------------
+   LAPTOP / DESKTOP (general refinement)
+-------------------------------------------------- */
+@media (max-width: 1200px) {
+  .contact-flex {
+    gap: 40px;
+  }
+
+  .contact-form {
+    width: 360px;
+  }
+
+  .social-links {
+    width: 330px;
+  }
+}
+
+
+/* --------------------------------------------------
+   TABLETS (portrait & landscape)
+-------------------------------------------------- */
+@media (max-width: 900px) {
+  .contact-flex {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 45px;
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .social-links {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  .contact-link {
+    justify-content: center;
+    font-size: 1rem;
+  }
+
+  .link-icon {
+    font-size: 1.3rem;
+  }
+
+  .contact-form label {
+    text-align: left !important;
+  }
+}
+
+
+/* --------------------------------------------------
+   SMALL TABLETS / LARGE PHONES
+-------------------------------------------------- */
+@media (max-width: 720px) {
+  .contact-heading {
+    font-size: 2rem;
+  }
+
+  .contact-description {
+    font-size: 0.93rem;
+  }
+
+  .contact-form textarea {
+    height: 120px;
+  }
+
+  .btn-submit {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* --------------------------------------------------
+   PHONES
+-------------------------------------------------- */
+@media (max-width: 520px) {
+  .contact-container {
+    padding: 40px 16px;
+  }
+
+  .contact-heading {
+    font-size: 1.75rem;
+    margin-bottom: 28px;
+  }
+
+  .contact-form {
+    padding: 20px;
+    gap: 14px;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    font-size: 1rem;
+    gap: 10px;
+  }
+
+  .link-icon {
+    font-size: 1.25rem;
+  }
+
+  /* tighter spacing below form */
+  .contact-description {
+    margin-bottom: 18px;
+  }
+}
+
+
+/* --------------------------------------------------
+   VERY SMALL PHONES (iPhone SE & similar)
+-------------------------------------------------- */
+@media (max-width: 360px) {
+  .contact-heading {
+    font-size: 1.55rem;
+  }
+
+  .contact-form {
+    padding: 16px;
+  }
+
+  .btn-submit {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .contact-link {
+    font-size: 0.95rem;
+  }
+
+  .link-icon {
+    font-size: 1.1rem;
+  }
+}
+

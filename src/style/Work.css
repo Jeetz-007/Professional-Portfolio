@@ -1,0 +1,357 @@
+/* ---------- Work.css — Fixed, full card layout (paste this above your media queries) ---------- */
+/* Neon theme variables expected in :root:
+   --bg-primary, --accent-neon, --accent-neon-soft, --border-glow, --text-light, --text-muted
+*/
+
+/* Safety */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Page container */
+.work {
+  padding: 3rem 2rem;
+  background-color: var(--bg-primary);
+  color: var(--text-light);
+}
+
+/* Heading */
+.work-heading {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+.work-heading span {
+  color: var(--accent-neon);
+  text-shadow: 0 0 10px var(--accent-neon);
+}
+
+/* Grid of cards
+   - grid-auto-rows: 1fr makes each grid row equal height (keeps boxes consistent)
+   - each .project-card set to height:100% so it fills the cell
+*/
+
+
+.project-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  align-items: start;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+
+
+/* Card container */
+/* .project-card{
+  margin-top: 20px;
+  background: rgba(0,255,179,0.03);
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+} */
+.project-card {
+  /* display: grid; */
+  /* grid-template-rows: 1fr auto;  */
+  /* gap: 0.6rem; */
+  /* padding: 1.25rem; */
+  background: rgba(0,255,179,0.03);
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,255,179,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+  min-height: 0;
+  height: auto;
+  overflow: visible;
+}
+
+
+
+
+
+/* Hover lift */
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 36px rgba(0, 255, 179, 0.12);
+}
+
+/* Card body (grows) */
+.project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.28rem;
+  flex:1 1 auto;
+  min-height: 0;
+}
+
+/* Title */
+.project-heading {
+  color: var(--accent-neon);
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem 0;
+  font-weight: 700;
+}
+
+/* Description */
+.project-description {
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin: 0 0 0.45rem 0;
+  min-height: 0;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
+  font-size: 0.98rem;
+}
+
+/* Tech / skills row */
+.skills {
+  font-weight: 600;
+  margin: 0 0 0.35rem 0;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  font-size: 0.94rem;
+  white-space: normal;
+}
+
+/* Footer / action buttons
+   - margin-top: auto pins footer to bottom when .project-body grows
+   - wrap allowed for narrow screens
+*/
+.project-links {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-top: 25px;
+  padding-top: 0.25rem;
+}
+
+/* Button defaults */
+.btn-github,
+.btn-live,
+.project-info {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  white-space: nowrap;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-light);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--accent-neon);
+  transition: background 160ms ease, transform 160ms ease, box-shadow 160ms ease;
+  background: transparent;
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* project-info variant */
+.project-info {
+  border-color: var(--accent-neon-soft);
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Hover */
+.btn-github:hover,
+.btn-live:hover,
+.project-info:hover {
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  box-shadow: 0 8px 30px rgba(0, 255, 179, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Accessibility focus */
+.btn-github:focus,
+.btn-live:focus,
+.project-info:focus {
+  outline: 2px dashed rgba(0,255,179,0.22);
+  outline-offset: 4px;
+  box-shadow: 0 8px 24px rgba(0, 255, 179, 0.08);
+}
+
+/* Small visual adjustments for very narrow screens */
+@media (max-width: 520px) {
+  .project-cards { grid-template-columns: 1fr; gap: 1rem; }
+  .project-card { min-height: auto; }
+  .project-body { gap: 0.28rem; }
+  .project-links { gap: 0.45rem; margin-top: 0.5rem; }
+  .btn-github, .btn-live, .project-info {
+    padding: 8px 10px;
+    font-size: 0.94rem;
+    flex: 1 1 48%;      /* allow them to wrap into two columns */
+    justify-content: center;
+  }
+}
+
+/* Extra robustness for Safari / zoom quirks */
+.project-card, .project-body, .project-description {
+  min-height: 0;
+}
+
+/* Prevent accidental layout break from very long tokens */
+.project-description, .skills {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
+/* Optional: slightly reduce spacing on high-density displays */
+@media (min-resolution: 1.3dppx) and (max-width: 1600px) {
+  .project-body { gap: 0.22rem; }
+  .skills { margin-bottom: 0.28rem; }
+}
+
+/* ---------- Typography overrides (keeps your earlier sizes) ---------- */
+.project-heading {
+  font-size: 1.35rem !important;
+  font-weight: 700;
+}
+.project-description {
+  font-size: 1rem !important;
+  line-height: 1.55;
+}
+.skills {
+  font-size: 1rem !important;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+.btn-github,
+.btn-live,
+.project-info {
+  font-size: 1rem !important;
+  padding: 10px 14px;
+}
+.work-heading {
+  font-size: 2.2rem !important;
+  margin-bottom: 2.5rem;
+}
+
+
+/* ---------------- Responsive media queries for Work.css ---------------- */
+
+/* Extra-wide / large desktop */
+@media (min-width: 1400px) {
+  .work {
+    padding: 4rem 3rem;
+  }
+  .project-cards {
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+  .project-card {
+    padding: 1.6rem;
+    min-height: 300px;
+  }
+  .work-heading { font-size: 2.6rem; }
+  .project-heading { font-size: 1.45rem; }
+  .project-description { font-size: 1.04rem; }
+  .skills { font-size: 1.02rem; }
+  .btn-github, .btn-live, .project-info { font-size: 1rem; padding: 10px 14px; }
+}
+
+/* Desktop / laptop refinement */
+@media (max-width: 1200px) {
+  .work { padding: 3rem 2rem; }
+  .project-cards {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.6rem;
+  }
+  .project-card { min-height: 280px; padding: 1.35rem; }
+  .project-heading { font-size: 1.3rem; }
+  .project-description { font-size: 1rem; }
+}
+
+/* Medium screens / large tablets */
+@media (max-width: 980px) {
+  .work { padding: 2.6rem 1.4rem; }
+  .project-cards {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.25rem;
+  }
+  .project-card {
+    min-height: 240px;
+    padding: 1.15rem;
+  }
+  .project-heading { font-size: 1.18rem; }
+  .project-description { font-size: 0.98rem; }
+  .skills { font-size: 0.96rem; }
+  .project-links { gap: 0.6rem; }
+}
+
+/* Narrow tablets / large phones */
+@media (max-width: 720px) {
+  .work { padding: 2.2rem 1rem; }
+  .project-cards {
+    grid-template-columns: 1fr 1fr; /* two columns where space allows */
+    gap: 1rem;
+  }
+  .project-card {
+    min-height: auto;
+    padding: 1rem;
+  }
+  .project-heading { font-size: 1.08rem; }
+  .project-description { font-size: 0.96rem; line-height: 1.5; }
+  .skills { font-size: 0.95rem; }
+  .btn-github, .btn-live, .project-info {
+    padding: 9px 12px;
+    font-size: 0.96rem;
+  }
+}
+
+/* Phones: single-column, comfortable tap targets */
+@media (max-width: 520px) {
+  .work { padding: 1.8rem 0.85rem; }
+  .project-cards {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+  .project-card {
+    padding: 0.95rem;
+    min-height: auto;
+  }
+  .project-heading { font-size: 1.03rem; }
+  .project-description { font-size: 0.95rem; }
+  .skills { font-size: 0.94rem; margin-bottom: 0.5rem; }
+  .project-links {
+    gap: 0.6rem;
+  }
+  .btn-github, .btn-live, .project-info {
+    padding: 8px 10px;
+    font-size: 0.95rem;
+    flex: 1 1 48%;
+    justify-content: center;
+  }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+  .work { padding: 1.25rem 0.6rem; }
+  .work-heading { font-size: 1.6rem; }
+  .project-heading { font-size: 1rem; }
+  .project-description { font-size: 0.92rem; }
+  .btn-github, .btn-live, .project-info {
+    padding: 7px 8px;
+    font-size: 0.9rem;
+  }
+}
+
+/* High DPI / zoom softness: slightly reduce gaps to avoid overflow */
+@media (min-resolution: 1.3dppx) and (max-width: 1600px) {
+  .project-cards { gap: 1.25rem; }
+  .project-card { padding: 1.05rem; }
+}
+
+/* Ensure consistent min-height behavior across Safari/Zoom */
+@media (hover: none) and (pointer: coarse) {
+  .project-card { min-height: auto; }
+}

@@ -1,0 +1,318 @@
+.ft {
+  background: var(--bg-primary);
+  border-top: 1px solid var(--border-glow);
+  padding: 28px 18px 18px 18px;
+  color: var(--text-light);
+}
+
+/* Inner row: brand | nav | social */
+.ft-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* Brand */
+.ft-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: flex-start;
+}
+
+.logo-text{
+  color: var(--accent-neon);
+  text-decoration: none;
+}
+
+.ft-tag {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+/* Center nav: simple inline links */
+.ft-nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.ft-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  position: relative;
+  padding: 2px 0;
+  transition: color 0.18s ease;
+}
+
+/* small underline on hover (subtle) */
+.ft-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--accent-neon);
+  transition: width 0.2s ease;
+}
+.ft-link:hover {
+  color: var(--accent-neon);
+  text-shadow: 0 0 6px rgba(0,255,179,0.18);
+}
+.ft-link:hover::after {
+  width: 100%;
+}
+
+/* Social icons */
+.ft-social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.ft-social-btn {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border-glow);
+  background: rgba(0,255,179,0.02);
+  color: var(--accent-neon);
+  text-decoration: none;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+.ft-social-btn:hover {
+  transform: translateY(-3px);
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  box-shadow: 0 6px 20px rgba(0,255,179,0.12);
+}
+
+/* bottom copyright row */
+.ft-bottom {
+  margin-top: 14px;
+  text-align: center;
+}
+
+.ft-copy {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Floating up button (simple, small, no heavy animation) */
+.ft-up {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  border: 1px solid var(--border-glow);
+  background: rgba(0,255,179,0.03);
+  color: var(--accent-neon);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  z-index: 1200;
+  cursor: pointer;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+/* slight hover */
+.ft-up:hover {
+  transform: translateY(-5px);
+  background: var(--accent-neon);
+  color: var(--bg-primary);
+  box-shadow: 0 10px 30px rgba(0,255,179,0.15);
+}
+
+/* Responsive: stack and center */
+@media (max-width: 880px) {
+  .ft-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .ft-brand, .ft-social {
+    align-items: center;
+  }
+
+  .ft-nav {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .ft-social {
+    order: 3;
+  }
+
+  .ft-bottom {
+    margin-top: 10px;
+  }
+}
+
+/* Accessibility focus states */
+.ft-link:focus,
+.ft-social-btn:focus,
+.ft-up:focus {
+  outline: 3px solid rgba(0,255,179,0.12);
+  outline-offset: 3px;
+}
+
+
+/* ---------------- Responsive media queries for Footer.css ---------------- */
+
+/* Extra wide screens — more breathing room */
+@media (min-width: 1400px) {
+  .ft {
+    padding: 32px 36px 22px 36px;
+  }
+  .ft-inner {
+    max-width: 1400px;
+    gap: 28px;
+  }
+  .ft-brand { gap: 8px; }
+  .ft-tag { font-size: 1rem; }
+  .ft-nav { gap: 22px; }
+  .ft-link { font-size: 1rem; }
+  .ft-social-btn { width: 44px; height: 44px; }
+  /* .profile-pic { just in case footer displays image variants } */
+}
+
+/* Desktop / laptop */
+@media (max-width: 1200px) {
+  .ft {
+    padding: 28px 22px 18px 22px;
+  }
+  .ft-inner { max-width: 1100px; gap: 20px; }
+  .ft-link { font-size: 0.95rem; }
+  .ft-social-btn { width: 42px; height: 42px; }
+}
+
+/* Your existing tablet breakpoint — refine stacking and spacing */
+@media (max-width: 880px) {
+  .ft {
+    padding: 20px 14px 16px 14px;
+  }
+
+  .ft-inner {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .ft-brand, .ft-social {
+    align-items: center;
+  }
+
+  .ft-nav {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .ft-link {
+    font-size: 0.94rem;
+    padding: 4px 6px;
+  }
+
+  .ft-social {
+    order: 3;
+    gap: 10px;
+  }
+
+  .ft-social-btn {
+    width: 40px;
+    height: 40px;
+  }
+
+  .ft-bottom {
+    margin-top: 10px;
+  }
+
+  /* move floating up button slightly left on narrower screens (avoid overlap with system UI) */
+  .ft-up {
+    right: 12px;
+    bottom: 12px;
+  }
+}
+
+/* Small phones — tighten and make buttons tap-friendly */
+@media (max-width: 520px) {
+  .ft {
+    padding: 16px 12px 14px 12px;
+  }
+
+  .ft-inner { gap: 10px; }
+
+  .ft-brand { align-items: center; gap: 4px; }
+  .logo-text { font-size: 1rem; }
+  .ft-tag { font-size: 0.88rem; }
+
+  .ft-nav {
+    gap: 10px;
+  }
+  .ft-link {
+    font-size: 0.9rem;
+    padding: 6px 4px;
+  }
+
+  .ft-social-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .ft-copy { font-size: 0.86rem; }
+
+  /* floating up button smaller and more centered on very small screens */
+  .ft-up {
+    right: 10px;
+    bottom: 10px;
+    width: 44px;
+    height: 44px;
+    font-size: 0.98rem;
+  }
+}
+
+/* Very small phones — extreme compacting */
+@media (max-width: 360px) {
+  .ft {
+    padding: 12px 10px;
+  }
+  .ft-inner { gap: 8px; }
+  .ft-brand { gap: 4px; }
+  .ft-tag { font-size: 0.82rem; }
+  .ft-link { font-size: 0.84rem; }
+  .ft-social-btn { width: 36px; height: 36px; font-size: 0.95rem; }
+  .ft-copy { font-size: 0.82rem; }
+
+  /* hide floating up button if it collides with mobile UI (optional) */
+  .ft-up {
+    right: 8px;
+    bottom: 8px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}

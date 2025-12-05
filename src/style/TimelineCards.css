@@ -1,0 +1,272 @@
+/* --- tweakable alignment variables --- */
+:root{
+  /* width of the left year column */
+  --year-col-width: 110px;
+
+  /* width of the center dot column (should be >= dot size) */
+  --dot-col-width: 44px;
+
+  /* center X of the vertical line = year-col + dot-col/2 */
+  --line-left: calc(var(--year-col-width) + (var(--dot-col-width) / 2));
+
+  /* dot size */
+  --dot-size: 14px;
+
+  /* connector length from card edge toward dot (adjust if needed) */
+  --connector-length: 28px;
+}
+
+
+.journey-title{
+    text-align: center;
+    margin-top: 40px;
+}
+
+.journey-title span{
+    color: var(--accent-neon);
+    text-shadow: 0 0 10px var(--accent-neon);
+}
+
+/* container */
+.timeline-container{
+  position: relative;
+  margin-top: 2rem;
+  padding-left: 1rem;
+}
+
+/* vertical line placed using variable so it sits behind dot column */
+.timeline-line{
+  position: absolute;
+  left: calc(var(--line-left) - 2px); /* -2px centers a 4px-wide line */
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--accent-neon);
+  opacity: 0.14;
+  border-radius: 2px;
+  z-index: 1; /* behind content */
+}
+
+/* items wrapper */
+.timeline-items{ position: relative; }
+
+/* grid layout: year | dot | card */
+.timeline-item{
+  display: grid;
+  grid-template-columns: var(--year-col-width) var(--dot-col-width) 1fr;
+  gap: 12px;
+  align-items: start;
+  margin: 1.6rem 0;
+  position: relative;
+}
+
+/* year column (right-aligned) */
+.timeline-left{
+  display:flex;
+  align-items:flex-start;
+  justify-content:flex-end;
+  padding-right: 8px;
+}
+.timeline-year{
+  color:var(--accent-neon);
+  font-weight:700;
+  font-size:1.05rem;
+  text-shadow: 0 0 8px var(--accent-neon);
+}
+
+/* center (dot) */
+.timeline-center{
+  display:flex;
+  align-items:flex-start;
+  justify-content:center;
+  position:relative;
+  z-index:3; /* above the line */
+}
+
+/* actual dot */
+.timeline-dot{
+  width:var(--dot-size);
+  height:var(--dot-size);
+  background:var(--accent-neon);
+  border-radius:50%;
+  box-shadow:0 0 12px var(--accent-neon);
+  border: 3px solid var(--bg-primary); /* ring to separate from line */
+  transform: translateY(6px);
+  position:relative;
+  z-index:4;
+}
+
+/* right: card */
+.timeline-right{ position:relative; }
+
+.timeline-card{
+  position:relative;
+  z-index:2;
+  background: rgba(0,255,179,0.04);
+  border: 1px solid var(--border-glow);
+  border-radius:10px;
+  padding: 14px 16px;
+  box-shadow: 0 6px 20px rgba(0,255,179,0.03);
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+/* small horizontal connector from card left edge to dot (drawn from card) */
+.timeline-card::before{
+  content:"";
+  position:absolute;
+  left: calc(-1 * (var(--connector-length) + 4px)); /* start left of card */
+  top: 18px; /* vertical offset to align with dot - tweak if needed */
+  width: var(--connector-length);
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-neon), rgba(0,255,179,0.22));
+  border-radius:2px;
+  box-shadow: 0 2px 8px rgba(0,255,179,0.04);
+  z-index:2;
+}
+
+/* hover lift */
+.timeline-card:hover{
+  transform: translateY(-7px);
+  box-shadow: 0 12px 40px rgba(0,255,179,0.06);
+}
+
+/* text inside card */
+.timeline-card p{
+  margin:0;
+  color:var(--text-muted);
+  line-height:1.55;
+  white-space: pre-line;
+}
+
+/* Safety: keep columns on small screens friendly */
+@media (max-width: 980px){
+  :root{
+    --year-col-width: 90px;
+    --dot-col-width: 36px;
+    --connector-length: 22px;
+    --line-left: calc(var(--year-col-width) + (var(--dot-col-width)/2));
+  }
+  .timeline-card::before{ top:16px; }
+}
+
+/* Mobile: stack compactly and hide the vertical line & connector */
+@media (max-width: 700px){
+  .timeline-item{
+    grid-template-columns: auto 28px 1fr;
+    gap:10px;
+  }
+
+  /* move line close to left and hide it visually */
+  :root{ --year-col-width: 56px; --dot-col-width: 28px; --connector-length: 0px; --line-left: calc(var(--year-col-width) + (var(--dot-col-width)/2)); }
+  .timeline-line{ display:none; }
+  .timeline-card::before{ display:none; }
+}
+
+/* Accessibility: focus ring on card */
+.timeline-card:focus-within{
+  outline: 2px dashed rgba(0,255,179,0.08);
+  outline-offset: 6px;
+}
+
+/* small polish: ensure the year/dot/card render above the line */
+.timeline-left, .timeline-center, .timeline-right{
+  z-index: 3;
+}
+
+
+/* ------------------ Extra responsive tweaks for TimelineCard.css ------------------ */
+
+/* Extra-large screens — give the timeline more breathing room */
+@media (min-width: 1400px) {
+  :root{
+    --year-col-width: 140px;
+    --dot-col-width: 56px;
+    --connector-length: 40px;
+    --line-left: calc(var(--year-col-width) + (var(--dot-col-width)/2));
+  }
+
+  .timeline-item { margin: 2.2rem 0; gap: 16px; }
+  .timeline-card { padding: 18px 20px; border-radius: 12px; }
+  .timeline-year { font-size: 1.12rem; }
+  .timeline-dot { width: calc(var(--dot-size) + 6px); height: calc(var(--dot-size) + 6px); }
+  .timeline-line { opacity: 0.18; }
+  .journey-title { font-size: 1.85rem; }
+}
+
+/* Desktop / laptop refinement */
+@media (max-width: 1200px) {
+  :root{
+    --year-col-width: 100px;
+    --dot-col-width: 40px;
+    --connector-length: 26px;
+    --line-left: calc(var(--year-col-width) + (var(--dot-col-width)/2));
+  }
+
+  .timeline-card { padding: 14px 16px; }
+  .timeline-year { font-size: 1.02rem; }
+  .timeline-dot { transform: translateY(6px); }
+}
+
+/* Small phones — tighten spacing and remove connectors */
+@media (max-width: 520px) {
+  :root{
+    --year-col-width: 48px;
+    --dot-col-width: 28px;
+    --connector-length: 0px;
+    --line-left: calc(var(--year-col-width) + (var(--dot-col-width)/2));
+  }
+
+  .timeline-item { grid-template-columns: auto 28px 1fr; gap: 10px; margin: 1rem 0; }
+  .timeline-line { display: none; }
+  .timeline-card::before { display: none; }
+
+  .timeline-card {
+    padding: 10px 12px;
+    border-radius: 10px;
+  }
+
+  .timeline-year {
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .timeline-dot {
+    width: 12px;
+    height: 12px;
+    transform: translateY(4px);
+    box-shadow: 0 0 8px var(--accent-neon);
+  }
+
+  .timeline-card p { font-size: 0.94rem; line-height: 1.45; }
+  .journey-title { font-size: 1.1rem; margin-top: 24px; }
+}
+
+/* Very small phones / narrow viewports */
+@media (max-width: 360px) {
+  :root{
+    --year-col-width: 44px;
+    --dot-col-width: 26px;
+    --connector-length: 0px;
+    --line-left: calc(var(--year-col-width) + (var(--dot-col-width)/2));
+  }
+
+  .timeline-card { padding: 9px 10px; }
+  .timeline-year { font-size: 0.9rem; }
+  .timeline-card p { font-size: 0.9rem; }
+  .timeline-dot { width: 11px; height: 11px; }
+}
+
+/* High-DPI / crisp displays: slightly stronger glow & shadow for clarity */
+@media (min-resolution: 1.3dppx) {
+  .timeline-dot { box-shadow: 0 0 14px var(--accent-neon); }
+  .timeline-card { box-shadow: 0 8px 26px rgba(0,255,179,0.04); }
+}
+
+/* Reduced-motion preference: simplify hover transforms */
+@media (prefers-reduced-motion: reduce) {
+  .timeline-card,
+  .timeline-card:hover {
+    transition: none !important;
+    transform: none !important;
+  }
+}
