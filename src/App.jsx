@@ -33,6 +33,8 @@ import "./style/Services.css"
 import "./style/Footer.css"
 import "./style/NotFound.css"
 
+import "./style/AdaptiveProfileImage.css"
+
 // Code
 const router = createBrowserRouter(
   createRoutesFromElements(

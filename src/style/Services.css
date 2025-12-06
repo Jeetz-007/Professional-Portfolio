@@ -61,12 +61,6 @@
   border-color: var(--accent-neon);
 }
 
-
-/* --------------------------------------------------
-   RESPONSIVE MEDIA QUERIES FOR Services.css
-   -------------------------------------------------- */
-
-/* --- Large Desktop Screens (≥1400px) --- */
 @media (min-width: 1400px) {
   .services-container {
     padding: 90px 40px;
@@ -80,7 +74,6 @@
   }
 }
 
-/* --- Laptops / Medium Screens (≤1100px) --- */
 @media (max-width: 1100px) {
   .services-heading {
     font-size: 2.1rem;
@@ -96,7 +89,6 @@
   }
 }
 
-/* --- Tablets (≤900px) --- */
 @media (max-width: 900px) {
   .services-container {
     padding: 60px 18px;
@@ -112,7 +104,6 @@
   }
 }
 
-/* --- Large Phones / Small Tablets (≤720px) --- */
 @media (max-width: 720px) {
   .services-container {
     padding: 50px 16px;
@@ -155,7 +146,6 @@
   }
 }
 
-/* --- Extra Small Phones (≤360px) --- */
 @media (max-width: 360px) {
   .services-heading {
     font-size: 1.55rem;

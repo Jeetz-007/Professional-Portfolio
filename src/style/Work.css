@@ -1,8 +1,3 @@
-/* ---------- Work.css — Fixed, full card layout (paste this above your media queries) ---------- */
-/* Neon theme variables expected in :root:
-   --bg-primary, --accent-neon, --accent-neon-soft, --border-glow, --text-light, --text-muted
-*/
-
 /* Safety */
 *,
 *::before,
@@ -28,12 +23,6 @@
   color: var(--accent-neon);
   text-shadow: 0 0 10px var(--accent-neon);
 }
-
-/* Grid of cards
-   - grid-auto-rows: 1fr makes each grid row equal height (keeps boxes consistent)
-   - each .project-card set to height:100% so it fills the cell
-*/
-
 
 .project-cards {
   display: grid;
@@ -69,9 +58,6 @@
   height: auto;
   overflow: visible;
 }
-
-
-
 
 
 /* Hover lift */
@@ -119,10 +105,6 @@
   white-space: normal;
 }
 
-/* Footer / action buttons
-   - margin-top: auto pins footer to bottom when .project-body grows
-   - wrap allowed for narrow screens
-*/
 .project-links {
   display: flex;
   gap: 0.6rem;
@@ -180,7 +162,6 @@
   box-shadow: 0 8px 24px rgba(0, 255, 179, 0.08);
 }
 
-/* Small visual adjustments for very narrow screens */
 @media (max-width: 520px) {
   .project-cards { grid-template-columns: 1fr; gap: 1rem; }
   .project-card { min-height: auto; }
@@ -189,29 +170,30 @@
   .btn-github, .btn-live, .project-info {
     padding: 8px 10px;
     font-size: 0.94rem;
-    flex: 1 1 48%;      /* allow them to wrap into two columns */
+    flex: 1 1 48%;
     justify-content: center;
   }
 }
 
-/* Extra robustness for Safari / zoom quirks */
+
 .project-card, .project-body, .project-description {
   min-height: 0;
 }
 
-/* Prevent accidental layout break from very long tokens */
 .project-description, .skills {
   overflow-wrap: anywhere;
   word-break: break-word;
 }
 
-/* Optional: slightly reduce spacing on high-density displays */
 @media (min-resolution: 1.3dppx) and (max-width: 1600px) {
-  .project-body { gap: 0.22rem; }
-  .skills { margin-bottom: 0.28rem; }
+  .project-body { 
+    gap: 0.22rem; 
+  }
+  .skills {
+     margin-bottom: 0.28rem;
+    }
 }
 
-/* ---------- Typography overrides (keeps your earlier sizes) ---------- */
 .project-heading {
   font-size: 1.35rem !important;
   font-weight: 700;
@@ -237,9 +219,6 @@
 }
 
 
-/* ---------------- Responsive media queries for Work.css ---------------- */
-
-/* Extra-wide / large desktop */
 @media (min-width: 1400px) {
   .work {
     padding: 4rem 3rem;
@@ -252,28 +231,46 @@
     padding: 1.6rem;
     min-height: 300px;
   }
-  .work-heading { font-size: 2.6rem; }
-  .project-heading { font-size: 1.45rem; }
-  .project-description { font-size: 1.04rem; }
-  .skills { font-size: 1.02rem; }
-  .btn-github, .btn-live, .project-info { font-size: 1rem; padding: 10px 14px; }
+  .work-heading {
+     font-size: 2.6rem; 
+    }
+  .project-heading { 
+    font-size: 1.45rem;
+   }
+  .project-description { 
+    font-size: 1.04rem; }
+  .skills { font-size: 1.02rem; 
+  }
+  .btn-github, .btn-live, .project-info { 
+    font-size: 1rem;
+    padding: 10px 14px; 
+    }
 }
 
 /* Desktop / laptop refinement */
 @media (max-width: 1200px) {
-  .work { padding: 3rem 2rem; }
+  .work { 
+    padding: 3rem 2rem; 
+  }
   .project-cards {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.6rem;
   }
-  .project-card { min-height: 280px; padding: 1.35rem; }
-  .project-heading { font-size: 1.3rem; }
-  .project-description { font-size: 1rem; }
+  .project-card { 
+    min-height: 280px; 
+    padding: 1.35rem; }
+  .project-heading { 
+    font-size: 1.3rem; 
+  }
+  .project-description { 
+    font-size: 1rem; 
+  }
 }
 
-/* Medium screens / large tablets */
 @media (max-width: 980px) {
-  .work { padding: 2.6rem 1.4rem; }
+  .work { 
+    padding: 2.6rem 1.4rem; 
+  }
   .project-cards {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.25rem;
@@ -282,35 +279,45 @@
     min-height: 240px;
     padding: 1.15rem;
   }
-  .project-heading { font-size: 1.18rem; }
-  .project-description { font-size: 0.98rem; }
+  .project-heading { 
+    font-size: 1.18rem; 
+  }
+  .project-description { 
+    font-size: 0.98rem; 
+  }
   .skills { font-size: 0.96rem; }
   .project-links { gap: 0.6rem; }
 }
 
-/* Narrow tablets / large phones */
 @media (max-width: 720px) {
   .work { padding: 2.2rem 1rem; }
   .project-cards {
-    grid-template-columns: 1fr 1fr; /* two columns where space allows */
+    grid-template-columns: 1fr 1fr; 
     gap: 1rem;
   }
   .project-card {
     min-height: auto;
     padding: 1rem;
   }
-  .project-heading { font-size: 1.08rem; }
-  .project-description { font-size: 0.96rem; line-height: 1.5; }
-  .skills { font-size: 0.95rem; }
+  .project-heading { 
+    font-size: 1.08rem; 
+  }
+  .project-description { 
+    font-size: 0.96rem; 
+    line-height: 1.5; }
+  .skills { 
+    font-size: 0.95rem; 
+  }
   .btn-github, .btn-live, .project-info {
     padding: 9px 12px;
     font-size: 0.96rem;
   }
 }
 
-/* Phones: single-column, comfortable tap targets */
 @media (max-width: 520px) {
-  .work { padding: 1.8rem 0.85rem; }
+  .work { 
+    padding: 1.8rem 0.85rem; 
+  }
   .project-cards {
     grid-template-columns: 1fr;
     gap: 0.9rem;
@@ -319,9 +326,16 @@
     padding: 0.95rem;
     min-height: auto;
   }
-  .project-heading { font-size: 1.03rem; }
-  .project-description { font-size: 0.95rem; }
-  .skills { font-size: 0.94rem; margin-bottom: 0.5rem; }
+  .project-heading { 
+    font-size: 1.03rem; 
+  }
+  .project-description { 
+    font-size: 0.95rem; 
+  }
+  .skills { 
+    font-size: 0.94rem; 
+    margin-bottom: 0.5rem; 
+  }
   .project-links {
     gap: 0.6rem;
   }
@@ -333,25 +347,36 @@
   }
 }
 
-/* Very small phones */
 @media (max-width: 360px) {
-  .work { padding: 1.25rem 0.6rem; }
-  .work-heading { font-size: 1.6rem; }
-  .project-heading { font-size: 1rem; }
-  .project-description { font-size: 0.92rem; }
+  .work {
+     padding: 1.25rem 0.6rem;
+     }
+  .work-heading { 
+    font-size: 1.6rem;
+   }
+  .project-heading { 
+    font-size: 1rem; 
+  }
+  .project-description { 
+    font-size: 0.92rem; 
+  }
   .btn-github, .btn-live, .project-info {
     padding: 7px 8px;
     font-size: 0.9rem;
   }
 }
 
-/* High DPI / zoom softness: slightly reduce gaps to avoid overflow */
 @media (min-resolution: 1.3dppx) and (max-width: 1600px) {
-  .project-cards { gap: 1.25rem; }
-  .project-card { padding: 1.05rem; }
+  .project-cards { 
+    gap: 1.25rem; 
+  }
+  .project-card { 
+    padding: 1.05rem;
+   }
 }
 
-/* Ensure consistent min-height behavior across Safari/Zoom */
 @media (hover: none) and (pointer: coarse) {
-  .project-card { min-height: auto; }
+  .project-card { 
+    min-height: auto; 
+  }
 }

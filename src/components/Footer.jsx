@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub, FaLinkedin, FaChevronUp } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaChevronUp, FaMailBulk } from "react-icons/fa";
 
 
 export default function Footer() {
@@ -26,7 +26,7 @@ export default function Footer() {
           </nav>
 
           <div className="ft-social">
-            <a href="" aria-label="Discord" className="ft-social-btn"><FaDiscord /></a>
+            <a href="mailto:jeethendravaraprasad007@gmail.com" aria-label="Gmail" className="ft-social-btn"><FaMailBulk /></a>
             <a href="https://github.com/Jeetz-007" target="_blank" aria-label="GitHub" className="ft-social-btn"><FaGithub /></a>
             <a href="https://linkedin.com/in/jeethendra-vara-prasad-7584b0209/" target="_blank" aria-label="LinkedIn" className="ft-social-btn"><FaLinkedin /></a>
           </div>

@@ -1,16 +1,91 @@
-# React + Vite
+# JEETZ — Personal Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, fully responsive neon–themed portfolio website built with **React + Vite**, showcasing my projects, skills, resume, and programming journey.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Tech Stack
 
-## React Compiler
+| Layer | Technology |
+|-------|------------|
+| Frontend | React (Vite), JavaScript (ES6+), CSS3 |
+| Routing | React Router DOM |
+| Deployment | Vercel |
+| Contact | EmailJS (or API) |
+| Styling | Custom Neon Theme |
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Home Page  
+- Neon pulsing hero section  
+- Rotating micro-title  
+- Smooth CTA buttons  
+- Clean skill preview chips  
+
+### About Page  
+- Bio  
+- Education timeline  
+- Skill chips  
+
+### 🔹 Skills Page  
+- Categorized chip-based skills UI  
+- Hover interaction  
+
+### 🔹 Projects Page  
+- Grid-based project cards  
+- GitHub / Live / View More buttons  
+- Individual project details  
+- Image gallery + thumbnails  
+
+### 🔹 Resume Page  
+- Embedded PDF viewer  
+- Neon Download CV button  
+
+### 🔹 Services Page  
+- Neon hover service cards  
+
+### 🔹 Contact Page  
+- Form validation  
+- Success screen  
+- Multiple social contact options  
+
+### 🔹 404 Page  
+- Neon-styled error page  
+
+---
+
+## 📱 Responsiveness
+
+Optimized for:
+
+- Desktop  
+- Laptops  
+- Tablets  
+- Mobile  
+- iPads  
+- Foldable devices  
+
+---
+
+## ⚙️ Getting Started
+
+```bash
+git clone https://github.com/your-username/Professional-Portfolio.git
+```
+
+### 2️⃣ Install dependencies
+```bash
+npm install
+```
+
+### 3️⃣ Run development server
+```bash
+npm run dev
+```
+
+### 4️⃣ Build for production
+```bash
+npm run build
+```

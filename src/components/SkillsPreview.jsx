@@ -1,4 +1,3 @@
-// src/components/SkillsPreview.jsx
 export default function SkillsPreview({ skills = [] }) {
   return (
     <div className="skills-preview">

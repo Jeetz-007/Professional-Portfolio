@@ -5,12 +5,11 @@ import { FaChevronDown, FaDownload } from "react-icons/fa";
 
 export default function Home() {
 
-  // <SkillsPreview skills={["React", "Node.js", "MongoDB", "CSS3"]} />
-  // rotating micro-title
+  // rotating micro title
   const titles = ["Full Stack Developer", "React Specialist", "UI-Focused Dev", "Freelancer"];
   const [titleIndex, setTitleIndex] = useState(0);
 
-  // entrance state to trigger CSS transitions
+
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {

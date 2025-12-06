@@ -24,9 +24,9 @@ export default function ProjectDetail() {
     );
   }
 
-  // Clean screenshot array: remove empty strings / falsy values
   const screenshots = useMemo(() => {
     const arr = Array.isArray(project.screenshots) ? project.screenshots : [];
+
     // remove falsy / empty entries
     return arr.filter((s) => typeof s === "string" && s.trim().length > 0);
   }, [project.screenshots]);
@@ -47,7 +47,7 @@ export default function ProjectDetail() {
 
         <div className="detail-title">
           <h1>{project.title}</h1>
-          {/* optional meta here */}
+
         </div>
 
         <div className="detail-links">
@@ -65,9 +65,9 @@ export default function ProjectDetail() {
       </div>
 
       <div className="detail-grid">
-        {/* Left: visual column */}
+
         <div className="visual-column">
-          {/* Main hero image */}
+
           {mainImage ? (
             <div className="project-hero">
               <img src={mainImage} alt={`${project.title} preview`} className="main-image" loading="eager" />
@@ -107,7 +107,6 @@ export default function ProjectDetail() {
           )}
         </div>
 
-        {/* Right: textual content */}
         <div className="detail-content">
           <h3>Project Overview</h3>
           <p className="description">{project.description}</p>

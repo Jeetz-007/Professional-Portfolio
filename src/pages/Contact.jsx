@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { FaDiscord, FaGithub, FaLinkedin, FaPaperPlane } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin, FaMailBulk, FaMailchimp, FaPaperPlane } from "react-icons/fa";
 
 export default function Contact() {
   const navigate = useNavigate();
@@ -161,8 +161,8 @@ export default function Contact() {
           </p>
 
           <div className="contact-links">
-            <a href="" className="contact-link">
-              <FaDiscord className="link-icon" />
+            <a href="mailto:jeethendravaraprasad007@gmail.com" className="contact-link">
+              <FaMailBulk className="link-icon" />
               Shoot me an Email
             </a>
 

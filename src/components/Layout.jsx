@@ -4,7 +4,7 @@ import Footer from "./Footer.jsx";
 function Layout() {
   return (
     <>
-      {/* NAVBAR */} 
+      {/* navigation bar */} 
       <header className="navbar">
         <div className="logo">
           {/* <img src="images/Logo.png" alt="Jeetz" /> */}
@@ -22,7 +22,7 @@ function Layout() {
         </nav>
       </header>
 
-      {/* MAIN CONTENT */}
+      {/* main content */}
       <main className="main-content">
         <Outlet />
       </main>

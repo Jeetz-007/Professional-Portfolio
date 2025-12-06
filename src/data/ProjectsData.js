@@ -28,8 +28,10 @@ const ProjectsData = [
 
     github: "https://github.com/Jeetz-007/Movie-Review-Web-App.git",
     live: "https://cinebuzzzzz.netlify.app",
-    thumbnail: "",
-    screenshots: [""],
+    thumbnail: "/assets/projects/MovieReviewApp/thumbnail.png",
+    screenshots: [
+      "/assets/projects/MovieReviewApp/ss1.png",
+      "/assets/projects/MovieReviewApp/ss2.png"],
   },
     {
     id: "devquotes",
@@ -42,8 +44,8 @@ const ProjectsData = [
 
     github: "",
     live: "https://develeporquotes.netlify.app",
-    thumbnail: "",
-    screenshots: [""],
+    thumbnail: "/assets/projects/Devquotes/thumbnail.png",
+    screenshots: ["/assets/projects/Devquotes/ss1.png"],
   },
     {
     id: "EcomCart",
@@ -54,10 +56,10 @@ const ProjectsData = [
     
     tech: ["React", "CSS3", "Node","Express","MongoDB"], 
 
-    github: "",
+    github: "https://github.com/Jeetz-007/E-Com-Cart",
     live: "",
-    thumbnail: "",
-    screenshots: [""],
+    thumbnail: "/assets/projects/E_Cart/thumbnail.png",
+    screenshots: ["/assets/projects/E_Cart/ss2.png","/assets/projects/E_Cart/ss3.png"],
   },
 
 ]

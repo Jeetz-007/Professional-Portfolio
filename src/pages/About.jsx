@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section className="about-page" aria-labelledby="about-title">
       <div className="about-inner">
-        {/* LEFT: TEXT CARD */}
+
         <div className="about-card">
           <h2 id="about-title" className="about-title">
             Who <span>I am</span>
@@ -41,7 +41,6 @@ export default function About() {
               <span className="chip">Node.js</span>
               <span className="chip">Express</span>
               <span className="chip">MongoDB</span>
-              {/* <span className="chip">CSS3</span> */}
             </div>
           </div>
 
@@ -68,7 +67,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* RIGHT: PHOTO + SOCIAL */}
+
         <aside className="about-photo" aria-hidden="false">
           <div className="photo-frame">
             <img src="images/aboutPic.jpg" alt="Jeethendra Varaprasad" className="profile-pic" />

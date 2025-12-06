@@ -1,5 +1,3 @@
-/* NotFound.css - Neon-themed 404 page */
-
 .notfound-page {
   background: var(--bg-primary);
   color: var(--text-light);
@@ -39,7 +37,6 @@
   font-size: 1.05rem;
 }
 
-/* ACTION BUTTONS */
 .nf-actions {
   display: flex;
   justify-content: center;
@@ -83,7 +80,7 @@
   transform: translateY(-3px);
 }
 
-/* responsive */
+/* responsive design */
 @media (max-width: 600px) {
   .nf-code {
     font-size: 4.2rem;
@@ -97,36 +94,50 @@
   }
 }
 
-
-/* ---------------- Responsive media queries for NotFound.css ---------------- */
-
-/* Extra-large / wide screens */
 @media (min-width: 1400px) {
   .notfound-inner {
     max-width: 760px;
     padding: 3rem 2rem;
   }
-  .nf-code { font-size: 8rem; }
-  .nf-title { font-size: 2.2rem; }
-  .nf-text { font-size: 1.15rem; }
+  .nf-code {
+    font-size: 8rem
+  }
+  .nf-title { 
+    font-size: 2.2rem
+  }
+  .nf-text { 
+    font-size: 1.15rem
+  }
 }
 
-/* Desktop / laptop refinement */
 @media (max-width: 1200px) {
-  .notfound-inner { padding: 2.4rem 1.6rem; }
-  .nf-code { font-size: 6.2rem; }
-  .nf-title { font-size: 1.9rem; }
+  .notfound-inner { 
+    padding: 2.4rem 1.6rem
+  }
+  .nf-code { 
+    font-size: 6.2rem
+  }
+  .nf-title { 
+    font-size: 1.9rem
+  }
 }
 
-/* Tablets / medium screens */
 @media (max-width: 900px) {
   .notfound-inner {
     padding: 2rem 1.2rem;
   }
-  .nf-code { font-size: 5rem; }
-  .nf-title { font-size: 1.6rem; }
-  .nf-text { font-size: 1rem; }
-  .nf-actions { gap: 0.8rem; }
+  .nf-code { 
+    font-size: 5rem
+  }
+  .nf-title { 
+    font-size: 1.6rem
+  }
+  .nf-text { 
+    font-size: 1rem
+  }
+  .nf-actions { 
+    gap: 0.8rem
+  }
 }
 
 /* Phones */
@@ -136,28 +147,49 @@
     padding: 1.6rem;
     margin: 0 0.5rem;
   }
-  .nf-code { font-size: 3.6rem; }
-  .nf-title { font-size: 1.35rem; }
-  .nf-text { font-size: 0.96rem; }
-  .nf-actions { flex-direction: column; gap: 10px; }
-  .btn-back, .btn-home { width: 100%; }
+  .nf-code { 
+    font-size: 3.6rem
+  }
+  .nf-title { 
+    font-size: 1.35rem
+  }
+  .nf-text { 
+    font-size: 0.96rem
+  }
+  .nf-actions { 
+    flex-direction: column; 
+    gap: 10px
+  }
+  .btn-back, .btn-home { 
+    width: 100%
+  }
 }
 
-/* Very small phones */
 @media (max-width: 360px) {
-  .notfound-inner { padding: 1.1rem; }
-  .nf-code { font-size: 3.1rem; }
-  .nf-title { font-size: 1.15rem; }
-  .nf-text { font-size: 0.9rem; }
-  .btn-back, .btn-home { padding: 9px 12px; font-size: 0.95rem; }
+  .notfound-inner { 
+    padding: 1.1rem
+  }
+  .nf-code { 
+    font-size: 3.1rem
+  }
+  .nf-title { 
+    font-size: 1.15rem
+  }
+  .nf-text {
+    font-size: 0.9rem
+  }
+  .btn-back, .btn-home { 
+    padding: 9px 12px; 
+    font-size: 0.95rem
+  }
 }
 
-/* High-DPI / Retina: slightly sharpen glow */
 @media (min-resolution: 1.3dppx) {
-  .nf-code { text-shadow: 0 0 20px var(--accent-neon); }
+  .nf-code { 
+    text-shadow: 0 0 20px var(--accent-neon)
+   }
 }
 
-/* Reduced-motion: remove lift animations */
 @media (prefers-reduced-motion: reduce) {
   .btn-back, .btn-home {
     transition: none !important;

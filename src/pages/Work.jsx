@@ -12,7 +12,6 @@ function Work() {
         {projects.map((project) => (
           <div key={project.id} className="project-card">
 
-            {/* BODY: heading + description + skills (this expands) */}
             <div className="project-body">
               <h3 className="project-heading">{project.title}</h3>
 
@@ -23,12 +22,11 @@ function Work() {
               </p>
             </div>
 
-            {/* FOOTER: action buttons (always pinned to bottom) */}
             <div className="project-links">
               <a className="btn-github" href={project.github} target="_blank" rel="noreferrer">GitHub</a>
               <a className="btn-live" href={project.live} target="_blank" rel="noreferrer">Live</a>
 
-              {/* ⭐ Dynamic link to detail page */}
+              {/* Dynamic link to detail page */}
               <Link className="project-info" to={`/work/${project.id}`}>
                 View More
               </Link>
