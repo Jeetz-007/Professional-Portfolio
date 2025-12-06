@@ -1,4 +1,4 @@
-import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin,FaMailBulk } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import TimelineCards from "../components/TimelineCards.jsx";
 import "/src/style/TimelineCards.css"
@@ -74,7 +74,7 @@ export default function About() {
           </div>
 
           <div className="social-row" aria-label="Social links">
-            <a href="" className="social" aria-label="Discord"><FaDiscord /></a>
+            <a href="mailto:jeethendravaraprasad007@gmail.com" className="social" aria-label="Gmail"><FaMailBulk /></a>
             <a href="https://github.com/Jeetz-007" target="_blank" className="social" aria-label="GitHub"><FaGithub /></a>
             <a href="https://linkedin.com/in/jeethendra-vara-prasad-7584b0209/"  target="_blank" className="social" aria-label="LinkedIn"><FaLinkedin /></a>
           </div>
