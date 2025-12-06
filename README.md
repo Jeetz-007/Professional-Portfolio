@@ -1,4 +1,4 @@
-# JEETZ — Personal Portfolio Website
+# JEETZ — Portfolio Website
 
 A modern, fully responsive neon–themed portfolio website built with **React + Vite**, showcasing my projects, skills, resume, and programming journey.
 
@@ -69,7 +69,7 @@ Optimized for:
 
 ---
 
-## ⚙️ Getting Started
+## Getting Started
 
 ```bash
 git clone https://github.com/your-username/Professional-Portfolio.git
