@@ -122,11 +122,11 @@ export default function ProjectDetail() {
               </div>
             ))}
           </div>
-
+{/* 
           <h3>Results & Notes</h3>
           <p className="notes">
             Prototype built to validate concepts; can be extended with backend integration and user testing.
-          </p>
+          </p> */}
 
           <div className="detail-actions">
             <Link to="/work" className="btn-secondary">Back to projects</Link>

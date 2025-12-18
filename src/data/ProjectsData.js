@@ -1,20 +1,20 @@
 const ProjectsData = [
   {
-    id: "codeops",
-    title: "CodeOps",
-    short:" A fictional Single Page Application(SPA).",
+    id: "HyperFitnessStudio",
+    title: "Hyper Fitness Studio - Client Website",
+    short:"A production website built for a local fitness studio, focused on mobile usability, fast access to inquiries, and local discoverability",
     description:
-      "CodeOps is a full UI prototype of a freelance platform built using React JS.",
+      "A production website built for a local fitness studio, focused on mobile usability, fast access to inquiries, and local discoverability.",
     
-    tech: ["React","React Router DOM", "CSS3", "Vercel","Vite"],
+    tech: ["HTML5" , "CSS3" , "Javascript" , "Netlify" , "Hostinger" , "Google Search Console"],
 
-    github: "https://github.com/Jeetz-007/CodeOps.git",
-    live: "https://code-ops-theta.vercel.app",
-    thumbnail: "/assets/projects/codeops/thumbnail.png",
+    github: "",
+    live: "https://hyperfitnessstudio.in",
+    thumbnail: "/assets/projects/HyperFitness/thumbnail.png",
     screenshots: [
-      "/assets/projects/codeops/CodeOps_ss3.png",
-      "/assets/projects/codeops/CodeOps_ss1.png",
-      "/assets/projects/codeops/CodeOps_ss2.png",
+      "/assets/projects/HyperFitness/HyperFitness_ss1.png",
+      "/assets/projects/HyperFitness/HyperFitness_ss2.png",
+      "/assets/projects/HyperFitness/HyperFitness_ss3.png",
     ],
   },
     {
@@ -34,18 +34,22 @@ const ProjectsData = [
       "/assets/projects/MovieReviewApp/ss2.png"],
   },
     {
-    id: "devquotes",
-    title: "DevQuotes",
-    short: "Random Programming Quote Generator",
+    id: "codeops",
+    title: "CodeOps",
+    short:" A fictional Single Page Application(SPA).",
     description:
-      "A simple Random Programming Quote Generator built with HTML, CSS, and JavaScript. This project fetches developer-themed quotes from a custom JSON file hosted on Netlify and displays them with a clean UI",
+      "CodeOps is a full UI prototype of a freelance platform built using React JS.",
     
-    tech: ["HTML", "CSS3", "Javascript(ES6)","API","Netlify"],
+    tech: ["React","React Router DOM", "CSS3", "Vercel","Vite"],
 
-    github: "",
-    live: "https://develeporquotes.netlify.app",
-    thumbnail: "/assets/projects/Devquotes/thumbnail.png",
-    screenshots: ["/assets/projects/Devquotes/ss1.png"],
+    github: "https://github.com/Jeetz-007/CodeOps.git",
+    live: "https://code-ops-theta.vercel.app",
+    thumbnail: "/assets/projects/codeops/thumbnail.png",
+    screenshots: [
+      "/assets/projects/codeops/CodeOps_ss3.png",
+      "/assets/projects/codeops/CodeOps_ss1.png",
+      "/assets/projects/codeops/CodeOps_ss2.png",
+    ],
   },
     {
     id: "EcomCart",
