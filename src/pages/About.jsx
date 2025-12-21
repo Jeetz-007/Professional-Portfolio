@@ -88,6 +88,43 @@ export default function About() {
         </div>
       </div>
 
+    <div class="testimonials">
+
+        <div class="testimonial-headings">
+            <h2 class="testimonial-main-heading">What people <span>say</span></h2>
+            <h3 class="testimonial-subheading">About my work</h3>
+        </div>
+
+        <div class="testimonial-content">
+
+            <div class="testimonial">
+                <p class="project-heading">Hyper Fitness Studio</p>
+                <p class="client-review">Very happy with the website developed by Jeethendra. 
+                    He clearly understood our requirements and delivered everything on time. 
+                    Communication was smooth, and he was always available for changes and clarifications. 
+                    Overall, very satisfied with his work and would definitely recommend him.
+                </p>
+                <p class="client-name">
+                    <i>- Shaik Hyder</i>
+                </p>
+            </div>
+
+            {/* <div class="testimonial">
+                <p class="project-heading">Thrive Fitness</p>
+                <p class="client-review">Very happy with the website developed by Jeethendra. 
+                    He clearly understood our requirements and delivered everything on time. 
+                    Communication was smooth, and he was always available for changes and clarifications. 
+                    Overall, very satisfied with his work and would definitely recommend him.
+                </p>
+                <p class="client-name">
+                    <i>- Thrive Anna</i>
+                </p>
+            </div> */}
+
+        </div>
+
+    </div>
+
     </section>
   );
 }
