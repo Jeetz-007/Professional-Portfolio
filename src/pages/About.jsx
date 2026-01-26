@@ -81,12 +81,12 @@ export default function About() {
         </aside>
       </div>
 
-      <div className="my-journey">
+      {/* <div className="my-journey">
         <h2 className="journey-title">My <span>Programming Journey</span></h2>
         <div className="journey-content">
           <TimelineCards />
         </div>
-      </div>
+      </div> */}
 
     <div class="testimonials">
 

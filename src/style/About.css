@@ -178,6 +178,11 @@
 }
 
 /* Testimonials */
+
+.testimonials{
+  margin-top: 80px;
+}
+
 .testimonial-content{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
